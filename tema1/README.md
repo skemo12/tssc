@@ -60,7 +60,7 @@ Rezolva aceste task-uri cu mine in 10 pasi simplii
 3. Ne uitam pe decompilare, vedem ca citirea de numere se face la infinit si o
    *abuzam*
 4. Nu prea stim sa calculam cati octeti sunt pana la eip, deci facem un `for` de
-   la 30 la 100 si obtinem 56
+   la 30 la 100 si obtinem 56, trecem in pwndbg in python
 5. Vedem ca nu merge deloc, si realizam ca citirea se face de un `int` si nu de
    `hex`
 6. Luam adresa din `hexa` `0x8049256` a lui `win` si o facem in `decimal` `134517334`
@@ -72,5 +72,11 @@ Rezolva aceste task-uri cu mine in 10 pasi simplii
 10. Facem niste hack-uri sa extragem *lucky number* dintr-un string cu multe
     B-uri (ca sa nu fie A-uri), nu uitam ca e in little endian, convertim cum
     trebuie, ii dam send, si obtinem *flag-ul*
+
+## Extra notes
+
+Script-urile de rezolvare a temei folosite sunt flagz0rx.py pentru task-ul 1
+si exploit.py [local/remote] pentru task-ul 3, task-ul 2 fiind rezolvat manual.
+Script-ul exploit.py are mesaje ajutatoare de folosire.
 
 ## Va multumesc pentru urmarirea acestui tutorial, lasa-ti un like si un comm
