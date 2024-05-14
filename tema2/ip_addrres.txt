@@ -1,0 +1,14 @@
+nmap -sP 192.168.160.*
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-05-14 10:34 UTC
+Nmap scan report for isc-server (192.168.160.1)
+Host is up (0.00036s latency).
+Nmap scan report for isc-web-escape-mysql.web-escape-2151 (192.168.160.2)
+Host is up (0.00022s latency).
+Nmap scan report for your-jail (192.168.160.4)
+Host is up (0.00013s latency).
+Nmap scan report for 192.168.160.213
+Host is up (0.00047s latency).
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.91 seconds
+
+
+ nmap -p- 192.168.160.213
